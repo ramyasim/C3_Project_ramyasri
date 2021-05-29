@@ -62,4 +62,15 @@ public class Restaurant {
         return name;
     }
 
+    public int orderTotal(List<String> itemNames) {
+        int total = 0;
+        for (Item item : getMenu()) {
+            if (itemNames.contains(item.getName())) {
+                total += item.getPrice();
+            }
+        }
+        return total;
+
+    }
+
 }
